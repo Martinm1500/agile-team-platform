@@ -1,0 +1,690 @@
+.serverView {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - var(--top-nav-height));
+  width: 100%;
+  gap: 0.375rem;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.principalContainer {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  height: calc(100vh - var(--top-nav-height));
+  border: 1px solid var(--search-border);
+  border-radius: var(--panel-radius) var(--panel-radius) 0 0;
+}
+
+.serverHeader {
+  background: var(--primary-light);
+  display: flex;
+  height: 2.5rem;
+  border-radius: var(--radius) 0.25rem var(--radius) var(--radius);
+  margin: 0.4rem 0.4rem 0 0.4rem;
+  align-items: center;
+  padding: 1rem 0.75rem;
+  border-top: 1px solid var(--search-border);
+  border-bottom: 1px solid var(--search-border);
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.displayServerOptions {
+  margin-left: auto;
+  color: var(--text-secondary);
+  width: 1rem;
+  height: 1rem;
+  margin-right: 2px;
+  transition: transform 0.2s ease;
+}
+
+.displayServerOptions.expanded {
+  transform: rotate(180deg);
+}
+
+.displayOptions {
+  color: var(--text-secondary);
+  width: 1rem;
+  height: 1rem;
+}
+
+.displayOptions.expanded {
+  transform: rotate(270deg);
+}
+
+.displayOptions svg {
+  width: 0.8rem;
+}
+
+.serverHeader:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.65rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.03125rem;
+  color: var(--text-secondary);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.sidebarChannels {
+  width: 17rem;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+}
+
+.serverName {
+  margin-left: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.serverOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.5rem 0 0.5rem 0;
+  margin-bottom: 0.6rem;
+  margin-left: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.optionItem {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  font-weight: 600;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.optionItem:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+}
+
+.optionItem.active {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 98%, #2c5364);
+  color: var(--text-primary);
+  border-right: 1px solid var(--primary);
+}
+
+.optionItem.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.optionItem.disabled:hover {
+  background: none;
+  color: var(--text-secondary);
+}
+
+.optionItem svg {
+  margin-right: 0.5rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  color: inherit;
+}
+
+.channelsSection {
+  padding: 0 0 1.2rem 0.5rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  margin: 0 0.4rem 0 1rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sectionHeader:hover {
+  color: var(--text-primary);
+}
+
+.sectionHeader svg {
+  width: 0.8rem;
+}
+
+.addChannelBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0.125rem;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addChannelBtn:hover {
+  color: var(--text-primary);
+}
+
+.addChannelBtn svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.channelList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.channelItem {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform;
+}
+
+.channelItem svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.channelItem span {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.channelItem:hover span {
+  color: var(--text-primary);
+}
+
+.channelItem.projectHeader {
+  padding: 0.25rem 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.channelItem.projectHeader:hover {
+  background: transparent;
+}
+
+.channelItem.projectHeader svg:not(.iconLg) {
+  width: 0.7rem;
+  height: 0.7rem;
+  color: var(--primary);
+}
+
+.projectOptionsBtn,
+.channelOptionsBtn {
+  background: transparent;
+  border: none;
+  margin-left: auto;
+  cursor: pointer;
+  display: none;
+}
+
+.channelItem.projectHeader:hover .projectOptionsBtn {
+  display: flex;
+}
+
+.channelItem:hover .channelOptionsBtn {
+  display: flex;
+}
+
+.projectOptionsBtn .iconLg,
+.channelOptionsBtn .iconLg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--text-secondary);
+}
+
+.projectOptionsBtn .iconLg:hover {
+  color: #cccccc;
+}
+
+.projectSubitems {
+  padding: 0 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.channelItem:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+}
+
+.channelItem.active {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 98%, #2c5364);
+  color: var(--text-primary);
+  border-right: 1px solid var(--primary);
+}
+
+.channelItem.active span {
+  color: var(--text-primary);
+}
+
+.channelItem.active svg {
+  color: var(--text-primary);
+}
+
+.channelItem.voice.active {
+  background: transparent;
+  border-right: none;
+}
+
+.channelItem.voice svg {
+  color: #4888a3;
+  width: 1rem;
+  height: 1rem;
+  font-weight: 600;
+}
+
+:global(.team-tools-chat-section)::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.6);
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background: rgba(0, 0, 0, 1);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.createProjectModal,
+.createChannelModal,
+.comingSoonModal {
+  background: var(--surface);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  width: 30rem;
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+}
+
+.createChannelModal {
+  width: 25rem;
+}
+
+.createProjectModalTitle,
+.createChannelModalTitle,
+.comingSoonModalTitle {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.comingSoonModalMessage {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.createProjectModalInputGroup,
+.createChannelModalInputGroup {
+  margin-bottom: 0.75rem;
+}
+
+.createProjectModalInput,
+.createChannelModalInput {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #4a5568;
+  border-radius: 0.375rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.createProjectModalInput:focus,
+.createChannelModalInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: inset 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1),
+    0 0 0 0.125rem rgba(var(--primary-rgb), 0.2);
+}
+
+.createProjectModalSectionTitle,
+.createChannelModalSectionTitle {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  padding-bottom: 0.5rem;
+}
+
+.createProjectModalOption,
+.createChannelModalOption {
+  margin-bottom: 0.75rem;
+}
+
+.createProjectModalOptionLabel,
+.createChannelModalOptionLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  cursor: pointer;
+}
+
+.createProjectModalOptionLabel.settingPrivate {
+  border-top: 1px solid #4a5568;
+  padding-top: 1rem;
+}
+
+.createProjectModalOptionCheckbox,
+.createChannelModalOptionCheckbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #4a5568;
+  border-radius: 50%;
+  margin-top: 0.2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.createProjectModalOptionCheckbox:checked,
+.createChannelModalOptionCheckbox:checked {
+  background: rgba(0, 123, 255, 0.144);
+  border-color: var(--primary);
+  box-shadow: inset 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1),
+    0 0 0 0.125rem rgba(var(--primary-rgb), 0.2);
+}
+
+.toolCard {
+  display: flex;
+  width: 2.5rem;
+  height: 2.3rem;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-top: 0.2rem;
+  border-radius: var(--radius);
+  border-right: 1px solid var(--primary);
+  border-left: 1px solid var(--primary);
+}
+
+.toolCard svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.createProjectModalOptionText,
+.createChannelModalOptionText {
+  display: flex;
+  flex-direction: column;
+}
+
+.createProjectModalOptionName,
+.createChannelModalOptionName {
+  display: flex;
+  color: var(--text-primary);
+  align-items: center;
+  gap: 0.2rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.125rem;
+}
+
+.createProjectModalOptionName svg,
+.createChannelModalOptionName svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.createProjectModalOptionDescription,
+.createChannelModalOptionDescription {
+  color: #a0aec0;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.createProjectModalActions,
+.createChannelModalActions,
+.comingSoonModalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.625rem;
+  padding-top: 0.2rem;
+}
+
+.createProjectModalButton,
+.createChannelModalButton,
+.comingSoonModalButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.createProjectModalButtonCancel,
+.createChannelModalButtonCancel {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background 0.2s ease;
+}
+
+.createProjectModalButtonCancel:hover,
+.createChannelModalButtonCancel:hover {
+  background-color: #c0392b;
+  color: var(--text-primary);
+}
+
+.createProjectModalButtonCreate,
+.createChannelModalButtonCreate,
+.comingSoonModalButton {
+  padding: 0.5rem 1.25rem;
+  background: #2563eb;
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background 0.2s ease;
+}
+
+.createProjectModalButtonCreate:hover,
+.createChannelModalButtonCreate:hover,
+.comingSoonModalButton:hover {
+  background: #1d4ed8;
+  color: var(--text-primary);
+}
+
+.createProjectModalButtonCreate:disabled,
+.createChannelModalButtonCreate:disabled {
+  background: #4a5568;
+  color: #718096;
+  cursor: not-allowed;
+}
+
+.serverOptionsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 0 0.5rem 0.3rem;
+  margin: 0 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.serverOptionsSectionOption {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.serverOptionsSectionOption:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.serverOptionsSectionOptionDanger {
+  color: #e53e3e;
+}
+
+.serverOptionsSectionOptionDanger:hover {
+  background: rgba(229, 62, 62, 0.1);
+}
+
+.serverOptionsSectionOptionIcon {
+  margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.channelOptionsMenu {
+  position: absolute;
+  right: 0.5rem;
+  top: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+}
+
+.channelOptionsMenuOption {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: left;
+  border-radius: var(--radius-sm);
+}
+
+.channelOptionsMenuOption:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.channelOptionsMenuOptionDanger {
+  color: #e53e3e;
+}
+
+.channelOptionsMenuOptionDanger:hover {
+  background: rgba(229, 62, 62, 0.1);
+}
+
+.threadsView {
+  padding: 1rem;
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contentWrapper {
+  position: relative;
+  flex: 1;
+  will-change: scroll-position;
+  overflow-y: auto;
+  display: flex;
+  padding-bottom: 1rem;
+  flex-direction: column;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+/* WebKit-based browsers (Chrome, Edge, Safari) */
+.contentWrapper::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.contentWrapper::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0.25rem;
+}
+
+.contentWrapper::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 0.25rem;
+}
+
+.contentWrapper:hover {
+  scrollbar-color: rgba(100, 100, 100, 0.6) transparent;
+}
+
+.contentWrapper:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.6);
+}
+
+.contentWrapper:hover::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
+/* Mejoras para desplazamiento táctil */
+.contentWrapper {
+  scroll-snap-type: y proximity;
+}
+
+@media screen and (min-width: 1920px) {
+  .sidebarChannels {
+    width: 20rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .sidebarChannels {
+    width: 24rem;
+  }
+}

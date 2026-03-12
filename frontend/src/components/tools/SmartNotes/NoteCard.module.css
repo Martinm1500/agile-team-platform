@@ -1,0 +1,264 @@
+.noteCard {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.01);
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  height: 182px;
+  width: 260px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+
+.noteCard:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.noteCard.dragging {
+  opacity: 0.5;
+  transform: scale(0.95);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.draggingPreview {
+  opacity: 1 !important;
+  transform: rotate(5deg) !important;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.noteCard.dragOver {
+  border: 1px dashed #4a90e2;
+  background-color: rgba(74, 144, 226, 0.1);
+}
+
+.noteCard.empty {
+  border: 1px dashed rgb(63, 63, 63);
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.noteCard.indicator {
+  border: 1px dashed #4a90e2;
+  background: rgba(74, 144, 226, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.noteCard.indicator:hover {
+  background: rgba(74, 144, 226, 0.1);
+  border-color: #3a80d2;
+}
+
+.indicatorContent {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.indicatorIcon {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.indicatorText {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.noteCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.noteCard.idea {
+  box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3);
+}
+
+.noteCard.knowledge {
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+.noteCard.reference {
+  box-shadow: 0 4px 6px rgba(249, 115, 22, 0.3);
+}
+
+.noteCard.analysis {
+  box-shadow: 0 4px 6px rgba(236, 72, 153, 0.3);
+}
+
+.noteCard.thinking {
+  box-shadow: 0 4px 6px rgba(39, 174, 96, 0.3);
+}
+
+.noteCard.research {
+  box-shadow: 0 4px 6px rgba(26, 128, 171, 0.3);
+}
+
+.noteCard.quick-note {
+  box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+}
+
+.noteCard.idea:hover {
+  box-shadow: 0 6px 10px rgba(40, 167, 69, 0.4);
+}
+
+.noteCard.knowledge:hover {
+  box-shadow: 0 6px 10px rgba(0, 123, 255, 0.4);
+}
+
+.noteCard.reference:hover {
+  box-shadow: 0 6px 10px rgba(249, 115, 22, 0.4);
+}
+
+.noteCard.analysis:hover {
+  box-shadow: 0 6px 10px rgba(236, 72, 153, 0.4);
+}
+
+.noteCard.thinking:hover {
+  box-shadow: 0 6px 10px rgba(39, 174, 96, 0.4);
+}
+
+.noteCard.research:hover {
+  box-shadow: 0 6px 10px rgba(26, 128, 171, 0.4);
+}
+
+.noteCard.quick-note:hover {
+  box-shadow: 0 6px 10px rgba(52, 152, 219, 0.4);
+}
+
+.title {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 0.2rem;
+}
+
+.noteCard p {
+  margin: 0 0 0.4rem;
+  margin-left: 0.2rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.noteMenu {
+  position: relative;
+}
+
+.menuBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1em;
+  font-weight: 400;
+  cursor: pointer;
+  margin-bottom: 0.6rem;
+  padding: 5px;
+}
+
+.menuBtn:hover {
+  color: #4a90e2;
+}
+
+.menuDropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 100%;
+  right: 0;
+  padding: 0.5rem;
+  background-color: var(--surface);
+  border: 1px solid #333;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  gap: 0.3rem;
+  z-index: 10;
+  min-width: 120px;
+}
+
+.menuDropdown button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: none;
+  border-radius: var(--radius-sm);
+  border: none;
+  color: var(--text-secondary);
+  text-align: left;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.menuDropdown button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.menuDropdown .deleteBtn:hover {
+  color: #f34138;
+  background: rgba(248, 81, 73, 0.1);
+}
+
+.menuDropdown button:disabled {
+  color: #666;
+  cursor: not-allowed;
+}
+
+.tags {
+  display: none;
+  gap: 5px;
+  margin-top: 10px;
+  -webkit-line-clamp: 1;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tag {
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .noteCard {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .noteCard {
+    height: 182px;
+    width: 230px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .noteCard {
+    height: 182px;
+    width: 230px;
+  }
+}

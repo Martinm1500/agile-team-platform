@@ -1,0 +1,84 @@
+.activeMemberItem {
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  gap: 0.625rem;
+  padding: 1rem;
+  margin-right: 0.2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.activeMemberItem:hover {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+.avatarContainer {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+}
+
+.avatarContainer img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.statusIndicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(40, 167, 69, 0.9);
+  border: 1px solid #28a745;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  /* segundo borde "externo" */
+  box-shadow: 0 0 0 2px var(--surface);
+}
+
+.statusIndicator.active {
+  background: rgba(40, 167, 69, 0.7);
+  border: 1px solid #28a745;
+}
+
+.statusIndicator.inactive {
+  background-color: var(--text-secondary-dark);
+}
+
+.memberActivity {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
+  margin-top: 0.125rem;
+  cursor: pointer;
+}
+
+.memberActivity:hover {
+  color: var(--text-primary);
+}
+
+.activityIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.memberActivity:hover .activityIcon {
+  color: var(--text-primary);
+}

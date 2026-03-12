@@ -1,0 +1,197 @@
+.voiceChannel {
+  height: var(--top-nav-height);
+  margin-right: var(--top-nav-height);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+  flex: 1;
+}
+
+.teamInfoDisplay {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.voiceChannelSelector {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  gap: 0.75rem;
+  padding: 15px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  position: relative;
+  min-width: 0;
+  max-width: 200px;
+}
+
+.voiceChannelSelector .voice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.voiceChannelSelector:hover .voice {
+  background: transparent;
+}
+
+.voiceChannelSelector:hover {
+  background: linear-gradient(135deg, #0f2027, #2c5364);
+}
+
+.voiceChannelInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.signal {
+  width: 2rem;
+  height: 2rem;
+  background: rgba(119, 247, 60, 0.03);
+  border-radius: var(--radius-md);
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signalIcon {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: rgb(39, 131, 39);
+}
+
+.voiceChannelName {
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: 6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-secondary);
+}
+
+.voiceChannelMeta {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-secondary-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.voiceChannelWrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 35%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.voiceChannelContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  will-change: scroll-position;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  flex: 1;
+  min-width: 0;
+  justify-content: center;
+}
+
+.voiceChannelContainer:has(.voiceChannelInner > *:nth-child(n + 5)) {
+  justify-content: center;
+}
+
+.voiceChannelContainer.simplified {
+  justify-content: center;
+}
+
+.voiceChannelInner {
+  display: flex;
+  gap: 2px;
+  flex-wrap: nowrap;
+}
+
+.voiceChannelContainer::-webkit-scrollbar {
+  height: 4px;
+  background: transparent;
+}
+
+.voiceChannelContainer::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.voiceChannelContainer:hover::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-dark);
+}
+
+.voiceChannelContainer:hover::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-dark-hover);
+}
+
+.voiceChannelNav {
+  margin: 0 5px 0 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.voiceChannelNavBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.voiceChannelNavBtn svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.voiceChannelNavBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.voiceChannelNavBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

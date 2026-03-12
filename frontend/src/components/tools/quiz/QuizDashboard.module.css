@@ -1,0 +1,371 @@
+/* General Dashboard Styles */
+.quizDashboard {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0 var(--spacing);
+  border-radius: var(--panel-radius) var(--panel-radius) 0 0;
+  border: 1px solid var(--search-border);
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  height: var(--header-height);
+  align-items: center;
+  padding: 0.5rem var(--spacing);
+  border-bottom: 1px solid var(--border);
+}
+
+.header h1 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  margin: 1rem 0.05rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.container thead {
+  background: rgba(255, 255, 255, 0.009);
+}
+
+/* Search Container Styles */
+.searchQuizContainer {
+  background: rgba(255, 255, 255, 0.009);
+  display: flex;
+  position: relative;
+  padding: 0.5rem 0.625rem;
+  flex: 1;
+  height: var(--header-height);
+}
+
+.searchIcon {
+  margin-left: auto;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  width: 1rem;
+  height: 1rem;
+}
+
+.searchInput {
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 1rem;
+  margin-left: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  height: 38px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  width: 250px;
+}
+
+.searchInput::placeholder {
+  color: var(--text-secondary);
+  font-size: var(--font-size-placeholder);
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.125rem rgba(var(--primary-rgb), 0.1);
+}
+
+/* Explore Section Styles */
+.exploreSection {
+  margin-top: 20px;
+  color: var(--text-primary);
+}
+
+.exploreSection {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.exploreSection h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.exploreCards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.exploreCard {
+  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid #2a2a3d;
+  border-radius: 12px;
+  padding: 1rem;
+  flex: 1 1 250px;
+  min-width: 200px;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.exploreCard:hover {
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.exploreCard .icon {
+  font-size: 1.5rem;
+  color: #3b82f6;
+  margin-top: 0.2rem;
+}
+
+.exploreCard .content h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #fff;
+}
+
+.exploreCard .content p {
+  font-size: 0.9rem;
+  color: #cfcfcf;
+  margin-top: 0.25rem;
+}
+
+.createBtn {
+  width: max-content;
+  height: 2.375rem;
+  padding: 0 0.625rem;
+  display: flex;
+  gap: 0.3125rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary-dark);
+  font-size: var(--font-size-button);
+  font-weight: 600;
+}
+
+.createBtn:hover {
+  color: var(--text-primary);
+}
+
+.createBtn svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+/* Action Buttons Styles */
+.quizActions {
+  display: flex;
+  gap: 6px;
+}
+
+.actionBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.actionBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.actionBtn:hover::before {
+  opacity: 0.1;
+}
+
+.actionBtn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+  z-index: 1;
+}
+
+.actionBtn:hover svg {
+  transform: scale(1.1);
+}
+
+.editBtn {
+  color: #5c6bc0;
+  border-color: rgba(92, 107, 192, 0.3);
+}
+
+.startBtn {
+  color: #66bb6a;
+  border-color: rgba(102, 187, 106, 0.3);
+}
+
+.shareBtn {
+  color: #78909c;
+  border-color: rgba(120, 144, 156, 0.3);
+}
+
+.deleteBtn {
+  color: #ef5350;
+  border-color: rgba(239, 83, 80, 0.3);
+}
+
+.actionBtn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #424242;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  font-weight: 400;
+}
+
+.actionBtn:hover::after {
+  opacity: 0.9;
+  visibility: visible;
+}
+
+.actionBtn:active {
+  transform: scale(0.95);
+}
+
+.actionBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(92, 107, 192, 0.3);
+}
+
+/* Quiz Module Styles */
+.memoLabNavigationButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.memoLabNavButton {
+  background: transparent;
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.memoLabReturn {
+  color: var(--text-primary);
+}
+
+.memoLabPrevButton {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.memoLabPrevButton:hover {
+  background-color: var(--secondary-hover);
+  transform: translateY(-2px);
+}
+
+.memoLabPrevButton:disabled {
+  background: rgba(255, 255, 255, 0.04);
+  cursor: not-allowed;
+}
+
+.memoLabNextButton {
+  background: var(--primary-light);
+  border-left: 1px solid var(--primary);
+  border-right: 1px solid var(--primary);
+  color: var(--text-primary);
+}
+
+.memoLabNextButton:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.memoLabNextButton:disabled {
+  background-color: #4c8290;
+  cursor: not-allowed;
+}
+
+.memoLabSubmitButton {
+  background-color: var(--primary);
+  color: var(--text-primary);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.memoLabSubmitButton:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.memoLabSubmitButton:disabled {
+  background: transparent;
+  border: 1px solid var(--border);
+  cursor: not-allowed;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1);
+  }
+}

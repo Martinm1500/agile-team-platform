@@ -1,0 +1,427 @@
+.smartnotesDashboard {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  height: var(--header-height);
+  align-items: center;
+  padding-top: 0.3rem;
+  position: absolute;
+  top: 0;
+}
+
+.header h1 {
+  display: flex;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-right: auto;
+  color: var(--text-primary);
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, #007bff, #28a745);
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+.workspaceTitle {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.noWorkspaces {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.newNoteBtn {
+  width: max-content;
+  height: 2.375rem;
+  padding-left: 0.5rem;
+  display: flex;
+  gap: 0.3125rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: var(--font-size-button);
+  font-weight: 600;
+}
+
+.newNoteBtn:hover {
+  color: var(--text-primary);
+}
+
+.newNoteBtn svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Dropdown Styles */
+.dropdownContainer {
+  position: relative;
+}
+
+.dropdownBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+}
+
+.dropdownBtn svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--text-secondary);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 1rem;
+  padding: 0.8rem 0.3rem 0.8rem 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 300px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  overflow-y: auto;
+  will-change: scroll-position;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.dropdownMenu::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.dropdownMenu::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0.25rem;
+}
+
+.dropdownMenu::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 0.25rem;
+}
+
+.dropdownMenu:hover {
+  scrollbar-color: rgba(100, 100, 100, 0.6) transparent;
+}
+
+.dropdownMenu:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.6);
+}
+
+.dropdownMenu:hover::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  gap: 0.5rem;
+  position: relative;
+}
+
+.dropdownItem:hover,
+.dropdownItem.active {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dropdownItem svg {
+  width: 0.8rem;
+  height: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.dropdownItem span {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Item Menu Styles */
+.itemMenu {
+  position: absolute;
+  top: 100%;
+  right: 3rem;
+  top: 0;
+  padding: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  z-index: 1001;
+  width: 9rem;
+  overflow: hidden;
+}
+
+.itemMenu button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.itemMenu button:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.deleteMenuBtn {
+  color: var(--error) !important;
+}
+
+/* Create Button Styles */
+.createBtn {
+  width: 100%;
+  height: 2.375rem;
+  padding: 0 0.625rem;
+  display: flex;
+  gap: 0.3125rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: var(--font-size-button);
+  font-weight: 600;
+  border-radius: var(--radius);
+}
+
+.createBtn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.createBtn svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Create Input Styles */
+.createInputContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.3rem;
+  background: var(--input-background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.createInput {
+  flex: 1;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.createInput::placeholder {
+  color: var(--text-secondary-dark);
+}
+
+.createInputActions {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.confirmCreateBtn,
+.cancelCreateBtn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.confirmCreateBtn {
+  background: var(--success);
+  color: white;
+}
+
+.cancelCreateBtn {
+  background: var(--error);
+  color: white;
+}
+
+.confirmCreateBtn:hover,
+.cancelCreateBtn:hover {
+  opacity: 0.8;
+}
+
+/* Action Buttons Styles */
+.optionBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  margin-left: auto;
+  overflow: hidden;
+  color: var(--text-secondary);
+}
+
+.optionBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.optionBtn:hover::before {
+  opacity: 0.1;
+}
+
+.optionBtn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+  z-index: 1;
+}
+
+.optionBtn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  width: 25rem;
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+}
+
+.modalContent h2 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.modalContent p {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.modalContent button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.confirmBtn {
+  background: var(--primary-light);
+}
+
+.cancelBtn {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.modalContent input,
+.modalContent textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid #2a2a3d;
+  background-color: #1a1a2e;
+  color: var(--text-secondary-dark);
+  border-radius: 4px;
+}

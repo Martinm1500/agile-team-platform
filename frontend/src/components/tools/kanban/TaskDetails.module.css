@@ -1,0 +1,192 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  z-index: 1005;
+  padding: 1rem;
+}
+
+.modalContent {
+  background: var(--surface);
+  border: 1px solid var(--search-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  width: 380px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--search-border);
+  margin-bottom: 0.2rem;
+}
+
+.modalTitle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.closeButton {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin-top: -5px;
+}
+
+.closeButton:hover {
+  color: var(--text-primary);
+}
+
+.modalSection {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.5rem;
+  align-items: start;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0;
+  padding-top: 0.1rem;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sectionText {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  width: fit-content;
+}
+
+.statusBadge-todo {
+  background: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  border-right: 1px solid #28a745;
+}
+
+.statusBadge-in-progress {
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+  border-right: 1px solid #ec4899;
+}
+
+.statusBadge-review {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  border-right: 1px solid #007bff;
+}
+
+.statusBadge-done {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+  border-right: 1px solid #f97316;
+}
+
+.assignedToContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dueDateContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dueDateIcon {
+  width: 0.9rem;
+  height: 0.9rem;
+  color: var(--text-secondary-dark);
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.mentionsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.mentionItem {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.mentionAvatar {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.footer {
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--search-border);
+}
+
+.actionButton {
+  padding: 0.5rem 1.25rem;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background 0.2s ease;
+}
+
+.actionButton:hover {
+  background: #1d4ed8;
+}

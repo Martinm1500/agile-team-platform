@@ -1,0 +1,7 @@
+package dev.martinm.platform.servers.exceptions;
+
+public class UserBannedException extends RuntimeException {
+    public UserBannedException(String message) {
+        super(message);
+    }
+}

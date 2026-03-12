@@ -1,0 +1,30 @@
+.create-channel-modal__type-selector {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.create-channel-modal__type-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.create-channel-modal__type-option:hover {
+  background-color: var(--background-secondary);
+}
+
+.create-channel-modal__type-option input[type="radio"] {
+  margin: 0;
+}
+
+.create-channel-modal__type-option svg {
+  width: 18px;
+  height: 18px;
+}

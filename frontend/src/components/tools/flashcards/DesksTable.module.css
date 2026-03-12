@@ -1,0 +1,90 @@
+.table {
+  width: 100%;
+  border-top: 1px solid var(--border);
+  border-collapse: collapse;
+}
+
+.table thead {
+  background: rgba(255, 255, 255, 0.009);
+}
+
+th,
+td {
+  padding: 0.6rem 1.2rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+th {
+  width: 25%;
+  background: transparent;
+}
+
+tr {
+  border-top: 1px solid var(--border);
+}
+
+.deckActions {
+  display: flex;
+  gap: 6px;
+}
+
+.deckActions button {
+  background: rgba(255, 255, 255, 0.03);
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.actionBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.actionBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.actionBtn:hover::before {
+  opacity: 0.1;
+}
+
+.actionBtn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+  z-index: 1;
+}
+
+.actionBtn:hover svg {
+  transform: scale(1.1);
+}
+
+.editBtn {
+  color: #5c6bc0;
+  border-color: rgba(92, 107, 192, 0.3);
+}
+
+.deleteBtn {
+  color: #ef5350;
+  border-color: rgba(239, 83, 80, 0.3);
+}

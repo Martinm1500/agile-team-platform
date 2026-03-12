@@ -1,0 +1,853 @@
+.kanbanDashboard {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  height: var(--header-height);
+  align-items: center;
+  padding-top: 0.3rem;
+  position: absolute;
+  top: 0;
+}
+
+.header h1 {
+  display: flex;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-right: auto;
+  color: var(--text-primary);
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, #007bff, #28a745);
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+.workspaceTitle {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.noWorkspaces {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.dropdownContainer {
+  position: relative;
+}
+
+.dropdownBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+}
+
+.dropdownBtn svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--text-secondary);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 1rem;
+  padding: 0.5rem 0.2rem 0.5rem 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 300px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  overflow-y: auto;
+  will-change: scroll-position;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.dropdownMenu::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.dropdownMenu::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0.25rem;
+}
+
+.dropdownMenu::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 0.25rem;
+}
+
+.dropdownMenu:hover {
+  scrollbar-color: rgba(100, 100, 100, 0.6) transparent;
+}
+
+.dropdownMenu:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.6);
+}
+
+.dropdownMenu:hover::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 1rem;
+  height: 2.3rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  gap: 0.5rem;
+  position: relative;
+}
+
+.dropdownItem:hover,
+.dropdownItem.active {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dropdownItem svg {
+  width: 0.8rem;
+  height: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.dropdownItem span {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemMenu {
+  position: absolute;
+  top: 100%;
+  right: 3rem;
+  top: 0;
+  padding: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  z-index: 1001;
+  width: 9rem;
+  overflow: hidden;
+}
+
+.itemMenu button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.itemMenu button:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.deleteMenuBtn {
+  color: var(--error) !important;
+}
+
+.createBtn {
+  width: 100%;
+  height: 2.375rem;
+  padding: 0 0.625rem;
+  display: flex;
+  gap: 0.3125rem;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: var(--font-size-button);
+  font-weight: 600;
+  border-radius: var(--radius);
+}
+
+.createBtn:hover {
+  color: var(--text-primary);
+}
+
+.createBtn svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* Create Input Styles */
+.createInputContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.3rem;
+  background: var(--input-background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.createInput {
+  flex: 1;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.createInput::placeholder {
+  color: var(--text-secondary-dark);
+}
+
+.createInputActions {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.confirmCreateBtn,
+.cancelCreateBtn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.confirmCreateBtn {
+  background: var(--success);
+  color: white;
+}
+
+.cancelCreateBtn {
+  background: var(--error);
+  color: white;
+}
+
+.confirmCreateBtn:hover,
+.cancelCreateBtn:hover {
+  opacity: 0.8;
+}
+
+/* Action Buttons Styles */
+.optionBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  margin-left: auto;
+  overflow: hidden;
+  color: var(--text-secondary);
+}
+
+.optionBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.optionBtn:hover::before {
+  opacity: 0.1;
+}
+
+.optionBtn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+  z-index: 1;
+}
+
+.optionBtn:hover svg {
+  transform: scale(1.1);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  width: 25rem;
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+}
+
+.modalContent h2 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.modalContent p {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.modalContent button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.confirmBtn {
+  background: var(--primary-light);
+}
+
+.cancelBtn {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.modalContent input,
+.modalContent textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid #2a2a3d;
+  background-color: #1a1a2e;
+  color: var(--text-secondary-dark);
+  border-radius: 4px;
+}
+
+.backlogContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.activeContacts {
+  display: none;
+  align-items: center;
+  gap: -0.5rem;
+}
+
+.avatar {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-left: -0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.3);
+  z-index: 2;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarInitials {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  background: rgba(var(--primary-rgb), 0.1);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarRemaining {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 3px 0 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--text-secondary-dark);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-left: -0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.avatarRemaining:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.3);
+  z-index: 2;
+}
+
+.addTaskButton {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  height: 2.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.addTaskButton svg {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+
+.addTaskButton:hover {
+  color: var(--text-primary);
+}
+
+.backlogColumns {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  overflow-x: auto;
+  height: calc(100% - 3.125rem);
+  min-height: 0;
+  align-items: flex-start;
+}
+
+.backlogColumn {
+  flex: 1;
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 1rem 0.2rem 0.3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  height: 100%;
+  min-height: 0;
+  min-width: 17.5rem;
+}
+
+.columnTitle {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing) 0;
+  padding: 0 var(--spacing);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statusDot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.taskCount {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: normal;
+  margin-left: auto;
+  flex-shrink: 0;
+  min-width: 1.5rem;
+  text-align: right;
+}
+
+.statusDot-todo {
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid #28a745;
+}
+
+.statusDot-in-progress {
+  border: 1px solid #ec4899;
+  background: rgba(236, 72, 153, 0.1);
+}
+
+.statusDot-review {
+  background: rgba(0, 123, 255, 0.1);
+  border: 1px solid #007bff;
+}
+
+.statusDot-done {
+  border: 1px solid #f97316;
+  background: rgba(249, 115, 22, 0.1);
+}
+
+.columnTasks {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  height: 100%;
+  padding-right: 0.2rem;
+  padding-bottom: 1rem;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  will-change: scroll-position;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.columnTasks::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.columnTasks::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0.25rem;
+}
+
+.columnTasks::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 0.25rem;
+}
+
+.columnTasks:hover {
+  scrollbar-color: rgba(100, 100, 100, 0.6) transparent;
+}
+
+.columnTasks:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.6);
+}
+
+.columnTasks:hover::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
+.emptyColumn {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+  color: var(--text-secondary);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.emptyColumn p {
+  color: var(--text-secondary-dark);
+  font-size: 0.8rem;
+}
+
+.taskActions {
+  margin-top: 0.625rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.editTaskButton {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary-dark);
+  border: 1px solid var(--search-border);
+  border-radius: var(--radius);
+  padding: 0 0.9375rem;
+  font-size: var(--font-size-button);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.editTaskButton:hover {
+  background: var(--accent-light);
+}
+
+.createTaskModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.createTaskModal {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  width: 25rem;
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+}
+
+.createTaskModal__title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.createTaskModal__inputGroup {
+  margin-bottom: 0.75rem;
+}
+
+.createTaskModal__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.createTaskModal__input {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--search-border);
+  border-radius: 0.375rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 400;
+  word-break: break-word;
+}
+
+.createTaskModal__input[type="text"] {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.createTaskModal__input[type="textarea"] {
+  min-height: 100px;
+  resize: vertical;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  word-break: break-word;
+}
+
+.createTaskModal__input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: inset 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1),
+    0 0 0 0.125rem rgba(var(--primary-rgb), 0.2);
+}
+
+.createTaskModal__inputRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.createTaskModal__inputRow .createTaskModal__inputGroup {
+  flex: 1;
+}
+
+.createTaskModal__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  margin-top: 0.75rem;
+  border-top: 1px solid #4a5568;
+}
+
+.createTaskModal__actionButtons {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.createTaskModal__button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: var(--font-size-button);
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.createTaskModal__buttonCancel {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background 0.2s ease;
+}
+
+.createTaskModal__buttonCancel:hover {
+  background-color: #c0392b;
+  color: var(--text-primary);
+}
+
+.createTaskModal__buttonCreate {
+  padding: 0.5rem 1.25rem;
+  background: #2563eb;
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background 0.2s ease;
+}
+
+.createTaskModal__buttonCreate:hover:not(:disabled) {
+  background: #1d4ed8;
+  color: var(--text-primary);
+}
+
+.createTaskModal__buttonCreate:disabled {
+  background: #4a5568;
+  color: #718096;
+  cursor: not-allowed;
+}
+
+.createTaskModal__buttonDelete {
+  padding: 0.5rem 1.25rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+  border-radius: 0.375rem;
+  font-size: var(--font-size-button);
+  font-weight: 600;
+}
+
+.createTaskModal__buttonDelete:hover {
+  color: #f34138;
+  background: rgba(248, 81, 73, 0.1);
+}
+
+.createTaskModal__errorMessage {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.backlogColumns::-webkit-scrollbar {
+  height: 0.625rem;
+}
+
+.backlogColumns::-webkit-scrollbar-track {
+  border-radius: 0.25rem;
+}
+
+.backlogColumns::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 0.25rem;
+}
+
+.backlogColumns::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+@media screen and (min-width: 2560px) {
+  .backlogColumn {
+    padding: 1rem 1rem 0.3rem 1.8rem;
+  }
+}

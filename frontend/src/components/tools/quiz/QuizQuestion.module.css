@@ -1,0 +1,123 @@
+.quizContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.timerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.timer {
+  background: var(--primary-light);
+  color: #d3bfff;
+  border-right: 1px solid var(--primary);
+  border-left: 1px solid var(--primary);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+}
+
+.questionCard {
+  width: 100%;
+  padding: 2rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid #4a5568;
+  position: relative;
+}
+
+.questionHeader {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: var(--primary-light);
+  color: #d3bfff;
+  border-right: 1px solid var(--primary);
+  border-left: 1px solid var(--primary);
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+}
+
+.questionContent {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.questionText {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #e2e8f0;
+}
+
+.optionsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.optionLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #4a5568;
+  font-size: 1rem;
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.optionLabel:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+.radioInput {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid #4a5568;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.radioInput:hover {
+  border-color: var(--primary);
+}
+
+.radioInput:checked {
+  border-color: var(--primary);
+}
+
+.radioInput:checked::after {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234f46e5' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  position: absolute;
+  top: 15%;
+  left: 20%;
+}
+
+.optionText {
+  flex: 1;
+}
+
+.optionLabel input[type="radio"]:checked + .optionText {
+  color: var(--primary);
+  font-weight: 500;
+}

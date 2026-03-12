@@ -1,0 +1,432 @@
+.app-view {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.principal-view {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.sidebar-tools {
+  width: 55px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar-tools .toggle-sidebar-btn {
+  width: 2.3rem;
+  height: 2.3rem;
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+  background: transparent;
+  border-radius: var(--radius);
+  border: none;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.sidebar-tools .toggle-sidebar-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sidebar-tools .toggle-sidebar-btn svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.tools-card {
+  width: 2.3rem;
+  height: 2.3rem;
+  background: transparent;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary-dark);
+  position: relative;
+}
+
+.brand-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-logo img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+.server-card {
+  width: 2.4rem;
+  height: 2.4rem;
+  background: transparent;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.server-card:hover {
+  box-shadow: 0 0 6px rgba(106, 174, 252, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.server-card.active {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-left: 3px solid var(--text-primary);
+  border-radius: 0 var(--radius) var(--radius) var(--radius);
+  color: var(--text-primary);
+}
+
+.server-card.active .card-image {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 0 var(--radius) var(--radius) var(--radius);
+}
+
+.new-server-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius);
+  border: none;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.new-server-btn svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.image-container {
+  width: 2.35rem;
+  height: 2.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.home-card {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-top: 0.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.home-card:hover {
+  background: var(--primary-light);
+}
+
+.home-card.active {
+  background: var(--primary-light);
+  border: none;
+  border-left: 1px solid var(--text-primary);
+  border-radius: 0 var(--radius) var(--radius) var(--radius);
+  color: var(--text-primary);
+}
+
+.separator {
+  width: 1.5rem;
+  height: 0.03rem;
+  background: var(--search-border);
+  margin: 0.5rem 0;
+}
+
+.tools-card:hover {
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--primary);
+}
+
+.tools-card.active {
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 2px solid var(--primary);
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.tools-icon {
+  font-size: 0.88rem;
+}
+
+.home-icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: inherit;
+}
+
+.tools-icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.5rem;
+  color: inherit;
+}
+
+.team-tools-team-label {
+  display: none;
+}
+
+.main-area {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - var(--top-nav-height));
+}
+
+.sidebar {
+  width: 55px;
+  right: 0;
+  top: var(--top-nav-height);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.servers {
+  width: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.discover-card {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: var(--radius);
+  border: none;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.discover-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.discover-icon svg {
+  margin-left: 3px;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.discover-card:hover,
+.new-server-btn:hover {
+  background: var(--primary-light);
+  color: var(--text-primary);
+}
+
+.discover-card.active,
+.new-server-btn.active {
+  background: var(--primary-light);
+  color: var(--text-primary);
+}
+
+.team-tools-full-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.mention {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Responsividad */
+@media (max-width: 48rem) {
+  .tools-sidebar,
+  .teams-sidebar {
+    width: 3.13rem;
+    padding: 0.63rem 0;
+  }
+
+  .team-tools-main-area {
+    margin-right: 3.13rem;
+  }
+}
+
+.logout-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--radius);
+  border: none;
+  background: transparent;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  color: #f34138;
+  background: rgba(248, 81, 73, 0.1);
+  transform: scale(1.05);
+}
+
+.logout-btn:active {
+  transform: scale(0.98);
+}
+
+.logout-btn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.logout-confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.logout-confirm-content {
+  background: #161b22;
+  padding: 2rem;
+  border-radius: var(--radius);
+  max-width: 300px;
+  text-align: center;
+}
+
+.logout-confirm-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.logout-confirm-buttons button {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.5rem 1rem;
+  color: var(--text-secondary);
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.logout-confirm-buttons button:last-child {
+  background: #f85149;
+  color: white;
+  border: none;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.voice-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.voice-controls button {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius);
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voice-controls button:hover {
+  background: var(--primary-light);
+  color: var(--text-primary);
+}
+
+.voice-controls .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.voice-controls .icon.hangup {
+  width: 1rem;
+  height: 1rem;
+}
+
+.voice-controls .phone:hover {
+  color: #e53e3e;
+  background: rgba(229, 62, 62, 0.1);
+}
+
+.voice-channel {
+  height: var(--top-nav-height);
+  margin-right: var(--top-nav-height);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+  flex: 1;
+}

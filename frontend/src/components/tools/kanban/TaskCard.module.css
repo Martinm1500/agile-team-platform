@@ -1,0 +1,207 @@
+.backlogTaskCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--search-border);
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  cursor: grab;
+  flex-shrink: 0;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  transition: all 0.2s ease;
+  max-width: 320px;
+}
+
+.backlogTaskCard:hover {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.backlogTaskCard:active {
+  cursor: grabbing;
+  transform: translateY(0);
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: calc(var(--spacing) / 2);
+  min-width: 0;
+}
+
+.taskTitle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.taskStatus {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  color: white;
+  white-space: nowrap;
+}
+
+.taskStatus-todo {
+  background: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  border-right: 1px solid #28a745;
+}
+
+.taskStatus-in-progress {
+  color: #ec4899;
+  border-right: 1px solid #ec4899;
+  background: rgba(236, 72, 153, 0.1);
+}
+
+.taskStatus-review {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  border-right: 1px solid #007bff;
+}
+
+.taskStatus-done {
+  color: #f97316;
+  background: rgba(249, 115, 22, 0.1);
+  border-right: 1px solid #f97316;
+}
+
+.taskDescription {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: calc(var(--spacing) / 2);
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.taskFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+.taskDue {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--text-secondary-dark);
+}
+
+.taskDue svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.calendarIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--text-secondary-dark);
+}
+
+.taskAvatar {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Media queries para pantallas de 1920x1080 */
+@media screen and (min-width: 1600px) {
+  .backlogTaskCard {
+    padding: calc(var(--spacing) * 1.2);
+    max-width: 360px;
+  }
+
+  .taskTitle {
+    font-size: 0.85rem;
+  }
+
+  .taskStatus {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .taskDescription {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+  }
+
+  .taskFooter {
+    font-size: 0.8rem;
+  }
+
+  .taskAvatar {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .backlogTaskCard {
+    padding: calc(var(--spacing) * 1.4);
+    max-width: 380px;
+    border-radius: calc(var(--radius) * 1.1);
+  }
+
+  .taskTitle {
+    font-size: 0.9rem;
+  }
+
+  .taskStatus {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .taskDescription {
+    font-size: 0.85rem;
+    margin-bottom: calc(var(--spacing) * 0.7);
+  }
+
+  .taskFooter {
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+  }
+
+  .taskAvatar {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .taskDue svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* Para cuando hay múltiples tarjetas en un contenedor grid */
+@media screen and (min-width: 1920px) {
+  .backlogTasksContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .backlogTaskCard {
+    min-width: 500px;
+  }
+}

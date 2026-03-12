@@ -1,0 +1,146 @@
+.controlsContainer {
+  position: absolute;
+  right: 0;
+  height: var(--top-nav-height);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 0.8rem;
+}
+
+.avatarBellContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.statusIndicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--surface);
+}
+
+.statusIndicator.online {
+  background: rgba(40, 167, 69, 0.9);
+  border: 1px solid #28a745;
+}
+
+.statusIndicator.idle {
+  background: rgba(249, 115, 22, 0.8);
+  border: 1px solid #fa7211;
+}
+
+.statusIndicator.dnd {
+  background: var(--danger);
+  border: 1px solid rgb(253, 27, 27);
+}
+
+.statusIndicator.offline {
+  background: var(--text-secondary-dark);
+  border: 1px solid var(--text-secondary);
+}
+
+.userName {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.dropdownBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin-left: -0.5rem;
+  margin-right: 0.7rem;
+  border-radius: var(--radius-sm);
+}
+
+.dropdownBtn:hover {
+  color: var(--text-primary);
+}
+
+.dropdownBtn svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.bellBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.bellBtn:hover {
+  color: var(--text-primary);
+}
+
+.bellBtn svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.notificationsWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  background-color: rgb(248, 15, 93);
+  color: var(--text-primary);
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
