@@ -4,6 +4,7 @@ A collaborative platform designed for agile teams to communicate, organize tasks
 
 This project is a **full-stack application** built with a Java backend and a modern JavaScript frontend.
 
+---
 
 ## 🚀 Features
 
@@ -13,6 +14,7 @@ This project is a **full-stack application** built with a Java backend and a mod
 * REST API for client-server communication
 * Real-time updates using WebSockets
 
+---
 
 ## 📸 Screenshots
 
@@ -21,30 +23,35 @@ This project is a **full-stack application** built with a Java backend and a mod
 
 ![Team Manager](images/team-manager.png)
 
+---
 
 ### 📋 Kanban Board
 > Visualize and manage tasks across columns: To Do, In Progress, Review, and Done.
 
 ![Kanban Board](images/kanban.png)
 
+---
 
 ### 📝 Notes
 > Organize knowledge, ideas, and references in a grid-based notes view.
 
 ![Notes](images/notes.png)
 
+---
 
 ### ✏️ Note Editor
 > Create and edit notes with fields for title, type, content, tags, sources, and insights.
 
 ![Note Editor](images/notes-edit.png)
 
+---
 
 ### 💬 Text Channels & Tasks Sidebar
 > Real-time text communication combined with a persistent task sidebar for quick access.
 
 ![Sidebar Tasks](images/sidebar-tasks.png)
 
+---
 
 ## 🧱 Tech Stack
 
@@ -62,6 +69,7 @@ This project is a **full-stack application** built with a Java backend and a mod
 * Vite
 * JavaScript / TypeScript
 
+---
 
 ## 📂 Project Structure
 
@@ -77,6 +85,7 @@ agile-team-platform
 └── README.md
 ```
 
+---
 
 ## ⚙️ Running the Project
 
@@ -86,21 +95,25 @@ agile-team-platform
 git clone https://github.com/your-username/agile-team-platform.git
 ```
 
+---
 
 ### 2️⃣ Run the backend
 
 Navigate to the backend folder:
 
+```
 cd backend
 ```
 
 Run the Spring Boot application:
 
+```
 ./mvnw spring-boot:run
 ```
 
 or in Windows:
 
+```
 mvnw.cmd spring-boot:run
 ```
 
@@ -110,6 +123,7 @@ The backend will start on:
 http://localhost:8080
 ```
 
+---
 
 ### 3️⃣ Run the frontend
 
@@ -137,6 +151,7 @@ The frontend will start on:
 http://localhost:5173
 ```
 
+---
 
 ## 📡 Architecture
 
@@ -151,6 +166,7 @@ Spring Boot Backend
 Database
 ```
 
+---
 
 ## 🎯 Purpose of the Project
 
@@ -161,6 +177,7 @@ This project was built to explore:
 * API design with Spring Boot
 * modern frontend development with React
 
+---
 
 ## 👨‍💻 Author
 
