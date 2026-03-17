@@ -1,6 +1,5 @@
 package dev.martinm.platform.auth;
 
-
 import dev.martinm.platform.users.User;
 import dev.martinm.platform.users.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

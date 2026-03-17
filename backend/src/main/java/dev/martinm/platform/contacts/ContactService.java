@@ -123,7 +123,7 @@ public class ContactService {
         }
 
         contact.block();
-        contact.setBlockedBy(userContextService.getAuthenticatedUser()); // Setea quien bloqueó
+        contact.setBlockedBy(userContextService.getAuthenticatedUser());
         contactRepository.save(contact);
     }
 

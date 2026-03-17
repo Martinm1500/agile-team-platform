@@ -1,4 +1,3 @@
-// Conversation.java
 package dev.martinm.platform.messages;
 
 import dev.martinm.platform.channels.Channel;

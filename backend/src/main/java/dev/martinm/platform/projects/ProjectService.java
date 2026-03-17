@@ -95,7 +95,7 @@ public class ProjectService {
 
         serverPermissionService.checkIsServerMember(serverId,getAuthenticatedUser());
 
-        // IMPORTANTE , Devuelve solo los proyectos donde es miembro
+        // Devuelve solo los proyectos donde es miembro
         List<Project> projects = projectMemberService.getProjectsByUserId(getAuthenticatedUser().getId(), serverId);
 
         List<ProjectFullDTO> projectFullDTOS = new ArrayList<>();

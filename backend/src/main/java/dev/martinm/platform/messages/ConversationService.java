@@ -1,8 +1,6 @@
 package dev.martinm.platform.messages;
 
 import dev.martinm.platform.auth.UserContextService;
-import dev.martinm.platform.channels.Channel;
-import dev.martinm.platform.channels.ChannelRepository;
 import dev.martinm.platform.contacts.Contact;
 import dev.martinm.platform.contacts.ContactRepository;
 import dev.martinm.platform.users.User;

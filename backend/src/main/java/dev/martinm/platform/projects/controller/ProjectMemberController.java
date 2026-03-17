@@ -29,7 +29,7 @@ public class ProjectMemberController {
     }
 
     @PostMapping("/invitations/{invitationId}/accept")
-    public ResponseEntity<AcceptProjectInvitationResponse> acceptInvitationFromNotificaiton(@PathVariable Long projectId,
+    public ResponseEntity<AcceptProjectInvitationResponse> acceptInvitationFromNotification(@PathVariable Long projectId,
                                                                                             @PathVariable Long invitationId){
         return ResponseEntity.ok(
            projectMemberService.acceptProjectInvitationFromNotification(projectId,invitationId)
@@ -37,7 +37,7 @@ public class ProjectMemberController {
     }
 
     @PostMapping("/invitations/{invitationId}/reject")
-    public ResponseEntity<Void> rejectInvitationFromNotificaiton(@PathVariable Long invitationId){
+    public ResponseEntity<Void> rejectInvitationFromNotification(@PathVariable Long invitationId){
         projectMemberService.rejectProjectInvitationFromNotification(invitationId);
         return ResponseEntity.noContent().build();
     }

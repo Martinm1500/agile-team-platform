@@ -1,5 +1,7 @@
-package dev.martinm.platform.messages;
+package dev.martinm.platform.messages.dto;
 
+import dev.martinm.platform.messages.Conversation;
+import dev.martinm.platform.messages.ConversationType;
 import lombok.Data;
 
 @Data

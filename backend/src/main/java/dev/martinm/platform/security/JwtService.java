@@ -23,10 +23,10 @@ public class JwtService {
     @Value("${jwt.secretKey:${JWT_SECRET_KEY}}")
     private String secretKey;
 
-    @Value("${jwt.accessTokenExpiration:900000}")  // 15 min
+    @Value("${jwt.accessTokenExpiration:900000}")
     private long ACCESS_TOKEN_EXPIRATION;
 
-    @Value("${jwt.refreshTokenExpiration:604800000}")  // 7 days
+    @Value("${jwt.refreshTokenExpiration:604800000}")
     private long REFRESH_TOKEN_EXPIRATION;
 
     private final TokenBlacklistService tokenBlacklistService;

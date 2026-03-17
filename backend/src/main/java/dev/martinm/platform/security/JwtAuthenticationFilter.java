@@ -53,7 +53,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         final String jwt = authHeader.substring(7);
 
         try {
-            // 2. ✅ VERIFICAR BLACKLIST PRIMERO (NUEVO)
+            // 2. VERIFICAR BLACKLIST PRIMERO (NUEVO)
             if (tokenBlacklistService.isTokenBlacklisted(jwt)) {
                 logger.warn("Blacklisted token attempted use");
                 sendUnauthorizedError(response, "Token revoked");
@@ -116,9 +116,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    /**
-     * ✅ NUEVO: Enviar respuesta de error 401
-     */
     private void sendUnauthorizedError(HttpServletResponse response, String message) throws IOException {
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         response.setContentType("application/json");
@@ -127,9 +124,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         );
     }
 
-    /**
-     * ✅ OPCIONAL: Excluir endpoints públicos del filtro
-     */
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String path = request.getServletPath();

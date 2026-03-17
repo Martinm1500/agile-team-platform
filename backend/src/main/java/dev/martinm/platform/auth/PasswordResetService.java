@@ -18,7 +18,6 @@ public class PasswordResetService {
 
     private final PasswordResetTokenRepository passwordResetTokenRepository;
     private final UserRepository userRepository;
-    private final EmailService emailService;
     private final PasswordEncoder passwordEncoder;
 
     private static final int EXPIRY_HOURS = 24;
@@ -28,10 +27,8 @@ public class PasswordResetService {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found with email: " + email));
 
-        // Invalidar tokens previos
         passwordResetTokenRepository.deleteByUserId(user.getId());
 
-        // Crear nuevo token
         PasswordResetToken resetToken = new PasswordResetToken();
         resetToken.setUser(user);
 
@@ -40,9 +37,6 @@ public class PasswordResetService {
         resetToken.setExpiryDate(new Timestamp(cal.getTimeInMillis()));
 
         passwordResetTokenRepository.save(resetToken);
-
-        // Enviar email
-        emailService.sendPasswordResetEmail(email, resetToken.getToken());
     }
 
     @Transactional

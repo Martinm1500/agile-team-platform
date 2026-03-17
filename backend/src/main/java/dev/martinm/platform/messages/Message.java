@@ -1,4 +1,3 @@
-// Message.java
 package dev.martinm.platform.messages;
 
 import dev.martinm.platform.users.User;

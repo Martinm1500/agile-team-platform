@@ -24,7 +24,6 @@ public class ChannelService {
     private final ConversationRepository conversationRepository;
     private final UserContextService userContextService;
 
-    // Endpoint
     public ChannelDTO createChannel(ChannelDTO dto) {
         Long serverId = dto.getServerId();
 
@@ -45,7 +44,6 @@ public class ChannelService {
         return new ChannelDTO(savedChannel);
     }
 
-    // Endpoint
     public ChannelDTO getChannelById(Long id) {
         Channel channel = channelRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Channel not found"));
@@ -53,7 +51,6 @@ public class ChannelService {
         return new ChannelDTO(channel);
     }
 
-    // Endpoint
     public ChannelDTO updateChannel(Long id, ChannelDTO dto) {
         Channel channel = channelRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Channel not found"));
@@ -65,7 +62,6 @@ public class ChannelService {
         return new ChannelDTO(channelRepository.save(channel));
     }
 
-    // Endpoint
     public void deleteChannel(Long id) {
         Channel channel = channelRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Channel not found"));
@@ -73,7 +69,6 @@ public class ChannelService {
         channelRepository.deleteById(id);
     }
 
-    // Endpoint
     public List<ChannelDTO> getChannelsForServer(Long serverId) {
         serverPermissionService.checkIsServerMember(serverId, getAuthenticatedUser());
         List<Channel> channels = channelRepository.findByServerId(serverId);

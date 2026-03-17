@@ -1,4 +1,3 @@
-// Contact.java
 package dev.martinm.platform.contacts;
 
 import dev.martinm.platform.messages.Conversation;

@@ -73,7 +73,7 @@ public class TokenBlacklistService {
         return false;
     }
 
-    @Scheduled(cron = "0 0 2 * * ?") // Diario a las 2 AM
+    @Scheduled(cron = "0 0 2 * * ?")
     @Transactional
     public void cleanupExpiredTokens() {
         int deleted = blacklistRepository.deleteExpiredTokens();

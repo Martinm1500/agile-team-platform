@@ -42,9 +42,6 @@ public class UserInterceptor implements ChannelInterceptor {
             UserDetailsService userDetailsService,
             TokenBlacklistService tokenBlacklistService,
             UserRepository userRepository,
-            // @Lazy rompe el ciclo: Spring inyecta un proxy que se resuelve
-            // recién cuando se llama al método, momento en que brokerMessagingTemplate
-            // ya fue completamente inicializado.
             @Lazy SimpMessagingTemplate messagingTemplate
     ) {
         this.jwtService = jwtService;

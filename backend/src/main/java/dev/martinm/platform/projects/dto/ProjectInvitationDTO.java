@@ -26,5 +26,4 @@ public class ProjectInvitationDTO {
         this.status = projectInvitation.getStatus();
         this.createdAt = projectInvitation.getCreatedAt();
     }
-
 }

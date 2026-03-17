@@ -1,5 +1,6 @@
 package dev.martinm.platform.messages;
 
+import dev.martinm.platform.messages.dto.ConversationDTO;
 import dev.martinm.platform.messages.dto.ConversationStatusDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
