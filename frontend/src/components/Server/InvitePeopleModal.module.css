@@ -1,4 +1,3 @@
-/* Overlay */
 .overlay {
   position: fixed;
   inset: 0;
@@ -225,7 +224,6 @@
   text-align: center;
 }
 
-/* Invite Section */
 .inviteSection {
   display: flex;
   flex-direction: column;
@@ -280,7 +278,6 @@
   padding: 8px;
 }
 
-/* Footer */
 .footer {
   display: flex;
   justify-content: flex-end;
@@ -326,7 +323,6 @@
   cursor: not-allowed;
 }
 
-/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;

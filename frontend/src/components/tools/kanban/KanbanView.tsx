@@ -1,4 +1,3 @@
-// KanbanView.tsx
 import React, { useState, useEffect, useRef } from "react";
 import type { StompSubscription } from "@stomp/stompjs";
 import { useAppSelector, useAppDispatch } from "../../../hooks/redux";

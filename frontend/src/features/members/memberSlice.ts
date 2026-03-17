@@ -1,4 +1,3 @@
-// src/features/members/memberSlice.ts
 import {
   createSlice,
   createAsyncThunk,

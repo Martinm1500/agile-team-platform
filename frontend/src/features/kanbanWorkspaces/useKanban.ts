@@ -1,4 +1,3 @@
-//store/useKanban.ts
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import {
   setKanbans,

@@ -25,7 +25,6 @@ const CalendarView: React.FC = () => {
     description: "",
   });
 
-  // Load sample data
   useEffect(() => {
     const loadEvents = () => {
       setIsLoading(true);
@@ -188,7 +187,6 @@ const CalendarView: React.FC = () => {
     const date = new Date(currentDate);
     date.setDate(1);
 
-    // Días de la semana
     dayNames.forEach((dayName, i) => {
       days.push(
         <div key={`day-${i}`} className="calendar-day-name">
@@ -197,7 +195,6 @@ const CalendarView: React.FC = () => {
       );
     });
 
-    // Espacios en blanco para días del mes anterior
     const firstDay = date.getDay();
     const prevMonth = new Date(date.getFullYear(), date.getMonth(), 0);
     const daysInPrevMonth = prevMonth.getDate();
@@ -221,7 +218,6 @@ const CalendarView: React.FC = () => {
       );
     }
 
-    // Días del mes actual
     const daysInMonth = new Date(
       date.getFullYear(),
       date.getMonth() + 1,
@@ -267,7 +263,6 @@ const CalendarView: React.FC = () => {
       );
     }
 
-    // Días del próximo mes para completar la cuadrícula
     const lastDay = new Date(
       date.getFullYear(),
       date.getMonth() + 1,

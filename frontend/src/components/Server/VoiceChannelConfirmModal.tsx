@@ -1,4 +1,3 @@
-// VoiceChannelConfirmModal.tsx
 import React from "react";
 import styles from "./VoiceChannelConfirmModal.module.css";
 import { VolumeUpIcon } from "../Icons";

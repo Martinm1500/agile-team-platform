@@ -1,4 +1,3 @@
-/* Overlay */
 .overlay {
   position: fixed;
   inset: 0;
@@ -9,7 +8,6 @@
   z-index: 50;
 }
 
-/* Modal Content */
 .content {
   background: #1f1f24;
   color: #fff;
@@ -35,7 +33,6 @@
   margin-bottom: 16px;
 }
 
-/* Form */
 .form {
   display: flex;
   flex-direction: column;
@@ -73,7 +70,6 @@
   font-size: 0.8rem;
 }
 
-/* Invite Section */
 .inviteSection {
   display: flex;
   flex-direction: column;
@@ -128,7 +124,6 @@
   padding: 8px;
 }
 
-/* Footer */
 .footer {
   display: flex;
   justify-content: flex-end;
@@ -174,7 +169,6 @@
   cursor: not-allowed;
 }
 
-/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -1,4 +1,3 @@
-/* ContactItem.module.css */
 .contactItem {
   position: relative;
   background: rgba(255, 255, 255, 0.02);
@@ -40,7 +39,6 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  /* segundo borde "externo" */
   box-shadow: 0 0 0 2px var(--surface);
 }
 
@@ -147,7 +145,6 @@
   color: var(--danger);
 }
 
-/* Estados de carga */
 .contactItem.loading {
   pointer-events: none;
   opacity: 0.7;

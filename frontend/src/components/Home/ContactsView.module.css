@@ -134,7 +134,7 @@
   color: var(--text-secondary);
   background: transparent;
   border: none;
-  font-size: 0.875rem; /* 14px */
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
@@ -146,7 +146,7 @@
   font-size: 0.9rem;
   padding: 0.5rem;
   border-radius: var(--radius-sm);
-  margin-left: 1.5625rem; /* 25px */
+  margin-left: 1.5625rem;
 }
 
 .viewToggleBtn:hover {

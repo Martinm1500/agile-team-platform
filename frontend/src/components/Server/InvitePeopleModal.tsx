@@ -27,7 +27,7 @@ const InvitePeopleModal: React.FC<InvitePeopleModalProps> = ({
 
   const { sendServerInvitation } = useServer();
   const { getUserByUsername } = useUsers();
-  const { contacts } = useContacts();
+  const { contacts } = useContacts(currentUser.id);
 
   const activeContacts = useMemo(() => {
     return contacts.map((c) => {
@@ -35,7 +35,7 @@ const InvitePeopleModal: React.FC<InvitePeopleModalProps> = ({
       return {
         ...c,
         userId: other.id,
-        name: other.name,
+        name: other.username,
         avatarUrl: other.avatarUrl,
       };
     });

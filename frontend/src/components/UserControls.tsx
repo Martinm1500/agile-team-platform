@@ -1,4 +1,3 @@
-// UserControls.tsx
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./UserControls.module.css";
 import { BellIcon, ChevronDownIcon } from "./Icons";

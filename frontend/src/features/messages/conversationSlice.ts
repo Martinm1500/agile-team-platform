@@ -158,13 +158,13 @@ export const handleIncomingMessageNotification = createAsyncThunk(
         id: convDTO.id,
         channelId: null,
         contactId: convDTO.contactId,
-        name: user.name,
+        name: user.username,
         avatarUrl: user.avatarUrl,
         type: "dm",
         participants: [
           {
             id: currentUserId,
-            name: state.auth.user?.name || "",
+            username: state.auth.user?.username || "",
             avatarUrl: state.auth.user?.avatarUrl || "",
           },
           user,

@@ -62,7 +62,7 @@ const ServerCard: React.FC<ServerCardProps> = React.memo(({ server }) => {
   };
 
   if (isLoadingRequests) {
-    return <div>Loading...</div>; // Or some placeholder
+    return <div>Loading...</div>;
   }
 
   return (

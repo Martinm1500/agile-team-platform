@@ -226,7 +226,6 @@
   color: var(--error) !important;
 }
 
-/* Create Button Styles */
 .createBtn {
   width: 100%;
   height: 2.375rem;
@@ -255,7 +254,6 @@
   height: 1rem;
 }
 
-/* Create Input Styles */
 .createInputContainer {
   display: flex;
   align-items: center;
@@ -313,7 +311,6 @@
   opacity: 0.8;
 }
 
-/* Action Buttons Styles */
 .optionBtn {
   width: 28px;
   height: 28px;
@@ -357,7 +354,6 @@
   transform: scale(1.1);
 }
 
-/* Modal Styles */
 .modal {
   position: fixed;
   top: 0;

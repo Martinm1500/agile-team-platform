@@ -168,7 +168,6 @@ const ManageRolesModal: React.FC<ManageRolesModalProps> = ({
 
   const handleConfirmDelete = useCallback(() => {
     if (deleteConfirmRole) {
-      //onDelete(deleteConfirmRole);
       setDeleteConfirmRole(null);
     }
   }, [deleteConfirmRole]);

@@ -1,4 +1,3 @@
-// src/features/messages/stompService.ts
 import { Client } from "@stomp/stompjs";
 import type { IMessage, StompSubscription } from "@stomp/stompjs";
 import type { Message } from "./conversationTypes";

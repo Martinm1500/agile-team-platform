@@ -33,20 +33,18 @@
   gap: 8px;
 }
 
-/* Wrapper del avatar para el ring de speaking */
 .avatarWrapper {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
   flex-shrink: 0;
-  /* Ring transparente por defecto para evitar saltos de layout */
   outline: 2px solid transparent;
   outline-offset: 1px;
   transition: outline-color 150ms ease;
 }
 
 .avatarWrapper.speaking {
-  outline-color: #3ba55c; /* verde Discord-like */
+  outline-color: #3ba55c;
 }
 
 .userAvatar {

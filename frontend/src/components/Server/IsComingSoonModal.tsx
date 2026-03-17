@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./IsComingSoonModal.module.css"; // Updated to CSS Modules
+import styles from "./IsComingSoonModal.module.css";
 
 interface IsComingSoonProps {
   isOpen: boolean;

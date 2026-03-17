@@ -1,4 +1,3 @@
-//store/kanbanService
 import api from "../../lib/axios";
 
 export interface Kanban {

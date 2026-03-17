@@ -1,4 +1,3 @@
-// src/features/messages/StompProvider.tsx
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
   connectStomp,

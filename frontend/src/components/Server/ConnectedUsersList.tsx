@@ -23,7 +23,6 @@ const ConnectedUsersList: React.FC<ConnectedUsersListProps> = ({
   const modalRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<Record<string, HTMLDivElement>>({});
 
-  // ── Speaking detection ──────────────────────────────────────────────────
   const { getAnalyserNode, isConnected, isMuted } = useVoiceChannel();
   const [speakingUsers, setSpeakingUsers] = useState<Set<number>>(new Set());
 
@@ -42,7 +41,6 @@ const ConnectedUsersList: React.FC<ConnectedUsersListProps> = ({
     [],
   );
 
-  // Monitorear usuarios remotos + LOCAL_USER_ID para el propio usuario
   const monitoredIds = isConnected
     ? [
         ...users.filter((u) => u.id !== currentUserId).map((u) => u.id),
@@ -51,7 +49,6 @@ const ConnectedUsersList: React.FC<ConnectedUsersListProps> = ({
     : [];
 
   useSpeakingDetection(getAnalyserNode, monitoredIds, handleSpeakingChange);
-  // ───────────────────────────────────────────────────────────────────────
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

@@ -1,4 +1,3 @@
-// src/features/members/useMembers.ts
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import {
   getMembersByServerId,

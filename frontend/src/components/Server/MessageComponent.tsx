@@ -18,7 +18,7 @@ const MessageComponent: React.FC<MessageProps> = ({
   const senderMember = members.find((m) => m.userId === message.senderId);
   const sender = {
     id: message.senderId,
-    name: isCurrentUser ? currentUser.name : message.senderUsername,
+    name: isCurrentUser ? currentUser.username : message.senderUsername,
     avatarUrl: isCurrentUser
       ? currentUser.avatarUrl
       : senderMember?.avatarUrl || "https://i.pravatar.cc/150?img=1",

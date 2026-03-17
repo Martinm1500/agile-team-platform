@@ -1,4 +1,3 @@
-/* Overlay */
 .overlay {
   position: fixed;
   inset: 0;
@@ -9,7 +8,6 @@
   z-index: 1000;
 }
 
-/* Modal Content */
 .content {
   background: var(--surface);
   color: var(--text-primary);
@@ -25,13 +23,11 @@
   flex-direction: column;
 }
 
-/* Header */
 .header {
   padding-bottom: 16px;
   border-bottom: 1px solid var(--border);
 }
 
-/* Title */
 .title {
   font-size: 0.9rem;
   font-weight: 400;
@@ -56,7 +52,6 @@
   margin: 0;
 }
 
-/* Form */
 .form {
   display: flex;
   flex-direction: column;
@@ -149,7 +144,6 @@
   text-align: right;
 }
 
-/* Server Preview */
 .serverPreview {
   border-radius: var(--radius);
   overflow: hidden;
@@ -420,7 +414,6 @@
   display: none;
 }
 
-/* Radio Group */
 .radioGroup {
   display: flex;
   flex-direction: column;
@@ -499,7 +492,6 @@
   line-height: 1.4;
 }
 
-/* Error */
 .error {
   display: flex;
   align-items: center;
@@ -525,7 +517,6 @@
   font-size: 0.75rem;
 }
 
-/* Footer */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -603,7 +594,6 @@
   cursor: not-allowed;
 }
 
-/* Delete Confirmation */
 .deleteConfirmation {
   display: flex;
   flex-direction: column;
@@ -654,7 +644,6 @@
   cursor: not-allowed;
 }
 
-/* Spinner */
 .spinner {
   width: 14px;
   height: 14px;

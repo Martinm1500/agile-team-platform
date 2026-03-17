@@ -1,4 +1,3 @@
-// store/useContacts.ts
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import {
   setContacts,

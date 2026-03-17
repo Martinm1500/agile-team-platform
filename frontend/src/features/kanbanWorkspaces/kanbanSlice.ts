@@ -1,4 +1,3 @@
-//store/kanbanSlice
 import {
   createSlice,
   createAsyncThunk,

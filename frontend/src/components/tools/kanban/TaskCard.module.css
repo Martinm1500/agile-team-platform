@@ -191,7 +191,6 @@
   }
 }
 
-/* Para cuando hay múltiples tarjetas en un contenedor grid */
 @media screen and (min-width: 1920px) {
   .backlogTasksContainer {
     display: grid;
