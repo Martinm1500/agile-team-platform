@@ -87,6 +87,13 @@ agile-team-platform
 
 ---
 
+## 🗄️ Database Schema
+
+> Entity-relationship diagram showing the main tables and their relationships.
+
+<img width="12313" height="5457" alt="database" src="https://github.com/user-attachments/assets/3f53d4d3-b124-4342-9149-0d6a8ad83e4e" />
+
+
 ## ⚙️ Running the Project
 
 ### 1️⃣ Clone the repository
